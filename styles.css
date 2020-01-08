@@ -1,6 +1,9 @@
 * {
   box-sizing: border-box;
 }
+img {
+  width: 100%;
+}
 li {
   list-style: none;
 }
@@ -9,24 +12,39 @@ body {
 }
 
 .octodex {
-
-  margin: 20px;
-  padding: 0px;
+  text-align: center;
+  /* margin: 20px;
+  padding: 0px; */
 }
 
 /* targets octocats and their links */
 .octocat {
   display: inline-block;
-  width: 33%;
-  padding: 20px;
+  width: 30%;
+  /* padding: 20px; */
 }
 
 /* targets main octocat image */
-.octocat a img{
-  width: 100%;
-  margin: auto;
-  border: solid 2px #E7E7E7
-  
+.octocat > a{
+  display: inline-block;
+  position: relative;
+  /* width: 100%; */
+  /* margin: auto; */
+  border: solid 2px #E7E7E7;
+
+}
+
+.octocat > a::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: solid 10px #CCC;
+  border-left: solid 10px transparent;
+  border-right: solid 10px transparent;
+  position: absolute;
+  top: 100%;
+  right: 0%;
+
 }
 
 .octocat img:nth-of-type(1) {
@@ -43,26 +61,34 @@ body {
 }
 
 .image-footer {
-  display: inline-block;
-  width: 100%;
+  /* display: inline-block; */
+  position: relative;
+  /* width: 100%; */
   padding-top: 5px;
   padding-bottom: 10px;
-  border-bottom: solid 2px #E7E7E7
+  border-bottom: solid 2px #E7E7E7;
+  text-align: right;
 }
+
 .image-number {
-  display: inline-block;
+  /* display: inline-block; */
   color: #E7E7E7;
   font-weight: bold;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
 }
+
 .image-number:before {
   content: "#";
 }
 
 .image-caption {
   display: inline-block;
-  float: right;
+  /* float: right; */
   color: #000;
-
+  text-align: right;
 }
 
 
@@ -70,17 +96,10 @@ body {
    text-decoration: none;
    color: #000;
    font-weight: bold;
-   border: none;
+   /* border: none; */
  }
 
-.authors a:last-of-type {
-  border: none;
-  width: 0;
-  height: 0;
-  border-left: 4px solid transparent;
-  border-right: 4px solid transparent;
-  border-top: 4px solid #E7E7E7;
-}
+
 
 
 
@@ -89,4 +108,10 @@ body {
   display: inline-block;
   padding: 0px;
 
+}
+
+.authors img {
+  display: inline-block;
+  vertical-align: middle
+  border-radius: 5px;
 }
